@@ -1,0 +1,14 @@
+@use './header.scss';
+@use './footer.scss';
+@use './value.scss';
+@use './container.scss';
+@use './lightbox.scss';
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: value.$dark;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}

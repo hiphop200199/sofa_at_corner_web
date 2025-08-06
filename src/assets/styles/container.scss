@@ -1,0 +1,258 @@
+@use './value.scss';
+@use './button.scss';
+@use './input.scss';
+
+.container {
+  position: relative;
+  width: 100dvw;
+  background-color: value.$light;
+  h1 {
+    text-align: center;
+  }
+  details {
+    margin-block: 30px;
+  }
+  .video-box {
+    position: relative;
+    video {
+      display: inline-block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1920/1080;
+      border: none;
+    }
+    .border-box {
+      padding: 20px 32px;
+      position: absolute;
+      left: 20px;
+      bottom: 60px;
+      width: 300px;
+      height: 140px;
+      border-radius: 10px;
+      background-color: value.$light;
+      p {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+      a {
+        font-size: 13px;
+      }
+    }
+  }
+  .new-list-block {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 60px;
+    padding-inline: 44px;
+    .card {
+      width: 300px;
+      margin: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: value.$border;
+      text-decoration: none;
+      font-size: 20px;
+      img {
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+      }
+    }
+  }
+  .category-grid {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    width: 100dvw;
+    padding-bottom: 80px;
+    padding-inline: 44px;
+    .box {
+      overflow-x: hidden;
+      height: 100%;
+      aspect-ratio: 0.8;
+      img {
+        width: 100%;
+        height: 80%;
+        object-fit: cover;
+      }
+      a {
+        text-decoration: none;
+        font-size: 24px;
+      }
+    }
+  }
+  .article-box {
+    padding-inline: 44px;
+  }
+  .login-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      font-size: 42px;
+    }
+    .form {
+      border: value.$border;
+      margin-top: 20px;
+      padding: 15px;
+      font-size: 18px;
+      input {
+        @include input.inputStyle;
+        width: 300px;
+      }
+      span.error {
+        font-size: 14px;
+        margin-right: 5px;
+        color: value.$red;
+      }
+      .buttons {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        margin-block: 10px;
+        button {
+          @include button.buttonStyle;
+        }
+      }
+    }
+    .copyright {
+      margin-block: 60px;
+    }
+  }
+  .list-box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    .card {
+      width: 300px;
+      margin: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: value.$border;
+      text-decoration: none;
+      font-size: 20px;
+      img {
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+      }
+    }
+  }
+  .info-box {
+    height: 80dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .img-box {
+      display: flex;
+      justify-content: center;
+      width: 60%;
+      height: 100%;
+      img {
+        width: 80%;
+        height: 80%;
+        object-fit: cover;
+      }
+    }
+    .text-box {
+      width: 40%;
+      height: 100%;
+      padding: 10px 30px;
+      h1 {
+        font-size: 42px;
+      }
+      p {
+        font-size: 20px;
+        margin-block: 5px;
+      }
+      .buttons {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        margin-block: 10px;
+        button {
+          @include button.buttonStyle;
+        }
+      }
+    }
+  }
+  .cart-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .item {
+      border: value.$border;
+      margin-block: 5px;
+      display: flex;
+      align-items: center;
+      padding: 10px 30px;
+      p,
+      label {
+        margin-inline: 10px;
+      }
+      input {
+        width: 5ch;
+      }
+    }
+    p,
+    label {
+      font-size: 24px;
+    }
+    input {
+      @include input.inputStyle;
+      align-self: center;
+    }
+    button {
+      @include button.buttonStyle;
+      margin-top: 10px;
+      margin-bottom: 60px;
+      &.remove {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+    span {
+      font-size: 14px;
+      color: value.$red;
+    }
+  }
+  .pagination {
+    position: absolute;
+    left: 50%;
+    bottom: 2dvh;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a {
+      font-size: 24px;
+      color: value.$dark;
+      margin-inline: 5px;
+      cursor: pointer;
+      padding: 5px;
+      &.active {
+        background-color: value.$dark;
+        color: value.$light;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    .category-grid {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+    .info-box {
+      height: auto;
+      flex-direction: column;
+    }
+  }
+}

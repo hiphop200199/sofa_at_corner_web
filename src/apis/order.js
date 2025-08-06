@@ -1,0 +1,7 @@
+import { request } from './base'
+
+const secondPrefix = 'order'
+
+export const getList = async (params) => {
+  return await request.getList(secondPrefix, params)
+}

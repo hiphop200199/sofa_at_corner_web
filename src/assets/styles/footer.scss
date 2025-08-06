@@ -1,0 +1,53 @@
+@use './value.scss';
+
+.footer {
+  width: 100dvw;
+  padding-inline: 44px;
+  background-color: value.$white;
+  margin-top: 60px;
+  .main-part {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .column {
+      height: 280px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      p {
+        font-size: 16px;
+        margin-bottom: 30px;
+      }
+      a {
+        font-size: 12px;
+        text-decoration: none;
+        margin-bottom: 20px;
+      }
+    }
+  }
+  .bottom-part {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    a {
+      margin-inline: 20px;
+    }
+  }
+  #top {
+    overflow: hidden;
+    position: fixed;
+    right: 20px;
+    bottom: 40px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: value.$border;
+    background-color: value.$light;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
